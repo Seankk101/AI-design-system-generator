@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Design System Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="header">
+      <h1>Design System Generator</h1>
+      <p class="subtitle">Enter a brand name and color — AI builds your design system</p>
+    </header>
+
+    <!-- Input form -->
+    <section class="form-section">
+      <div class="form-row">
+        <div class="field">
+          <label for="brand-name">Brand name</label>
+          <input type="text" id="brand-name" placeholder="e.g. Nova, Pulse, Zeta" />
+        </div>
+        <div class="field">
+          <label for="brand-color">Primary color</label>
+          <div class="color-row">
+            <input type="color" id="brand-color" value="#5a3fd6" />
+            <input type="text"  id="color-hex"   value="#5a3fd6" maxlength="7" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="brand-style">Brand personality</label>
+          <select id="brand-style">
+            <option value="modern">Modern & minimal</option>
+            <option value="bold">Bold & energetic</option>
+            <option value="friendly">Friendly & rounded</option>
+            <option value="corporate">Corporate & serious</option>
+            <option value="creative">Creative & playful</option>
+          </select>
+        </div>
+        <button class="generate-btn" onclick="generateSystem()">
+          Generate system
+        </button>
+      </div>
+    </section>
+
+    <!-- Loading state -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>AI is building your design system...</p>
+    </div>
+
+    <!-- Output sections -->
+    <div class="output" id="output">
+
+      <section class="ds-section">
+        <h2>Color palette</h2>
+        <div class="palette-grid" id="palette-grid"></div>
+      </section>
+
+      <section class="ds-section">
+        <h2>Typography</h2>
+        <div class="type-showcase" id="type-showcase"></div>
+      </section>
+
+      <section class="ds-section">
+        <h2>Buttons</h2>
+        <div class="btn-showcase" id="btn-showcase"></div>
+      </section>
+
+      <section class="ds-section">
+        <h2>Cards</h2>
+        <div class="card-showcase" id="card-showcase"></div>
+      </section>
+
+      <section class="ds-section">
+        <h2>Form elements</h2>
+        <div class="form-showcase" id="form-showcase"></div>
+      </section>
+
+      <section class="ds-section">
+        <h2>AI brand guidelines</h2>
+        <div class="guidelines-box" id="guidelines-box">
+          <p class="placeholder">Your AI-generated brand guidelines will appear here.</p>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
